@@ -16,7 +16,7 @@ const user  = new mongoose.Schema({
         require: true,
         unique : true
     },
-    addres: {
+    address: {
         type: String,
         require: true,
     },
