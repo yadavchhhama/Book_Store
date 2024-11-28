@@ -9,14 +9,14 @@ router.post("/sign-up",async (req,res) => {
             .status(400)
             .json({message: "Username length should be greater than 3"});
         }
-        const existingUsername = await User.find({email:email});
+        const existingUsername = await User.findOne({username:username });
         if(existingUsername){
             return res
             .status(400)
             .json({message: "Username already exist"});
         }
 
-        const existingEmail = await UserActivation.find({username:username});
+        const existingEmail = await UserActivation.findOne({email:email});
         if(existingEmail){
             return res
             .status(400)
